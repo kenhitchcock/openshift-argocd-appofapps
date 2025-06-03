@@ -7,10 +7,9 @@ spec:
   project: default
   source:
     chart: example-helm
-    repoURL: https://github.com/kenhitchcock/openshift-argocd-appofapps/charts/example-helm
-    targetRevision: 1.16.1
+    repoURL: https://github.com/helm/examples
     helm:
-      releaseName: example-helm
+      releaseName: hello-world
   destination:
     server: "https://kubernetes.default.svc"
     namespace: exampleappofapps1
