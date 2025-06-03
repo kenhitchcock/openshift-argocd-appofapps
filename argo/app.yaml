@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: example-app-of-apps
+  namespace: argocd
+spec:
+  project: default
+  source:
+    chart: example-helm
+    repoURL: https://github.com/kenhitchcock/openshift-argocd-appofapps/charts/example-helm
+    targetRevision: 1.16.1
+    helm:
+      releaseName: example-helm
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: exampleappofapps1
